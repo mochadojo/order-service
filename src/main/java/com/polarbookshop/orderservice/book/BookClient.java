@@ -19,11 +19,9 @@ public class BookClient {
 		this.webClient = webClient;
 	}
 
-	public Mono<Book>
-	getBookByIsbn(String isbn) {
+	public Mono<Book> getBookByIsbn(String isbn) {
 		return webClient
 				.get()
-
 				.uri(BOOKS_ROOT_API + isbn)
 				.retrieve()
 				.bodyToMono(Book.class)
@@ -34,4 +32,3 @@ public class BookClient {
 	}
 
 }
-
